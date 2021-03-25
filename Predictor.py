@@ -1,5 +1,5 @@
 import DataTransform as dt
-import LinearRegresson as lr
+import LogisticRegresson as lr
 import numpy as np
 import matplotlib.pyplot as plt
 import random as rnd
