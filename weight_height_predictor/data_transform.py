@@ -23,9 +23,9 @@ def split_data(df, percent_split = int):
 
 def get_X_and_Y(df):
     """Transforms gender, weight, and height into two numpy arrays of features and labels."""
-    Y = df['Gender']
-    X = df[['Weight','Height']]
-    return X.to_numpy(), Y.to_numpy()
+    y = df['Gender']
+    x = df[['Weight','Height']]
+    return x.to_numpy(), y.to_numpy()
 
 def transform_gender(genders):
     """Transforms gender into 1 if it is male, and 0 if female. Returns the numpy array of these values."""
@@ -39,21 +39,21 @@ def round_classification(classified_data):
     classified_data[classified_data < 0.5] = 0
     return classified_data
 
-def check_shape(X, Y):
+def check_shape(x, y):
     """Ensures data from two numpy arrays has the same amount of rows."""
-    if X.shape[0] != Y.shape[0]:
+    if x.shape[0] != y.shape[0]:
         raise Exception("Error: Different amounts of data.")
     else:
         print("Same rows!")
 
-def append_ones(X):
+def append_ones(x):
     """
     Appends a dimension of ones to given numpy array
 
-    :param X: a numpy array
+    :param x: a numpy array
     :return: a numpy array with an added dimension (column) of ones
     """
-    return np.flip(np.append(np.ones((X.shape[0], 1)), X, axis=1), axis=1)
+    return np.flip(np.append(np.ones((x.shape[0], 1)), x, axis=1), axis=1)
 
 def get_missclassified(labels, classified_data):
     """Returns the sum of the absolute differences between the correct labels, and the classified data."""

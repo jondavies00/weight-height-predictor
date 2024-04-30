@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "weight-height-predictor"
+version = "0.1.0"
+description = ""
+authors = ["Jonathan Davies <jonathandavies128@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+matplotlib = "*"
+numpy = "*"
+pandas = "*"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
